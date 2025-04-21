@@ -49,6 +49,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'django.middleware.security.SecurityMiddleware',
 ]
 
 ROOT_URLCONF = 'socialmedia.urls'
@@ -107,6 +109,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
@@ -145,3 +149,4 @@ CHANNEL_LAYERS = {
 # File upload settings
 FILE_UPLOAD_MAX_MEMORY_SIZE = 26214400  # 25MB
 DATA_UPLOAD_MAX_MEMORY_SIZE = 26214400  # 25MB
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
