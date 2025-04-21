@@ -23,7 +23,11 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'your-production-secret-key')
 DEBUG = False
 
 # Add your production domain(s) here
-ALLOWED_HOSTS = ['yourdomain.com', 'www.yourdomain.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = [
+    'amaryzooh.onrender.com',  # Your Render domain
+    'localhost',               # For local development
+    '127.0.0.1',               # For local development
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
